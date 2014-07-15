@@ -43,7 +43,7 @@ TARGET_BOOTLOADER_BOARD_NAME := qcom
 TARGET_OTA_ASSERT_DEVICE := c1904,c1905,nicki
 
 # Kernel
-BOARD_KERNEL_CMDLINE := panic=3 console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := panic=3 console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
@@ -142,10 +142,10 @@ TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
 
 # Sepolicy
-#BOARD_SEPOLICY_DIRS += \
+BOARD_SEPOLICY_DIRS += \
     device/sony/nicki/sepolicy
 
-#BOARD_SEPOLICY_UNION += \
+BOARD_SEPOLICY_UNION += \
     file_contexts \
     app.te \
     bluetooth.te \
@@ -166,4 +166,3 @@ TW_NO_USB_STORAGE := true
     system.te \
     ueventd.te \
     wpa_supplicant.te
-
