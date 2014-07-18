@@ -16,11 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/sony/nicki/nicki-vendor.mk)
 $(call inherit-product, device/sony/common/resources.mk)
-$(call inherit-product, device/sony/qcom-common/qcom-common.mk)
-
-# Own Adreno Blobs
-TARGET_PROVIDES_ADRENO_DRIVER := true
-
+$(call inherit-product, device/sony/qcom-common/qcom-common-2xx.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Permissions
